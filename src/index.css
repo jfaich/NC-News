@@ -172,9 +172,21 @@ button:focus-visible {
 
 .nav-bar {
   margin-top: -10px;
-  border-color: #242424;
+  border-color: className= "comments-list" 242424;
   border-width: 5px;
   background-color: #ebebeb;
   border-radius: 4px;
   height: 50px;
+}
+
+.comments-list {
+  margin: 100px;
+  list-style: none;
+}
+
+.comment-card {
+  background-color: #ebebeb;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 8px;
 }
