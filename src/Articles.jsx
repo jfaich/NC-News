@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import ArticleCard from "./ArticleCard";
 const BaseURL = "https://news-api-9kug.onrender.com";
 import { Link } from "react-router";
+import { fetchAllArticles } from "./api";
 
 function Articles() {
   const [articlesList, setArticlesList] = useState([]);
@@ -10,8 +11,8 @@ function Articles() {
 
   useEffect(() => {
     setIsLoading(true);
-    axios.get(`${BaseURL}/api/articles`).then((response) => {
-      setArticlesList(response.data);
+    fetchAllArticles().then((response) => {
+      setArticlesList(response);
       setIsLoading(false);
     });
   }, []);
@@ -26,12 +27,11 @@ function Articles() {
         <ol className="articles-list">
           {articlesList.map((article) => {
             return (
-              <Link to="/article/">
-                <ArticleCard
-                  className="article-card"
-                  article={{ article }}
-                ></ArticleCard>
-              </Link>
+              <ArticleCard
+                key={article.article_id}
+                className="article-card"
+                article={{ article }}
+              ></ArticleCard>
             );
           })}
         </ol>
