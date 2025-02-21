@@ -3,6 +3,7 @@ import { react, useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { fetchArticle, fetchArticleComments } from "./api";
 import CommentsList from "./CommentsList";
+import IncreaseVotesCard from "./IncreaseVotesCard";
 
 function Article() {
   const [chosenArticle, setChosenArticle] = useState({});
@@ -25,7 +26,10 @@ function Article() {
           <em>#{chosenArticle.topic}</em>
         </p>
         <p className="author-text">Author: {chosenArticle.author}</p>
-
+        <IncreaseVotesCard
+          chosenArticle={chosenArticle}
+          className="votes-card"
+        />
         <p className="text-body">{chosenArticle.body}</p>
       </article>
       <CommentsList />
