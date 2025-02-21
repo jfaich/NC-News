@@ -25,3 +25,14 @@ export const fetchArticleComments = (article_id) => {
 export const addVoteToArticle = (article_id, voteData) => {
   return newsApi.patch(`/articles/${article_id}`, voteData);
 };
+
+export const addCommentToArticle = ({ article_id }, comment) => {
+  return newsApi
+    .post(`/articles/${article_id}/comments`, {
+      username: "cooljmessy",
+      body: comment,
+    })
+    .then((response) => {
+      return response;
+    });
+};
