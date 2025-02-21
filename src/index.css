@@ -190,3 +190,19 @@ button:focus-visible {
   margin: 20px;
   border-radius: 8px;
 }
+
+.votes-card {
+  border-radius: 4px;
+  border: #242424 solid 2px;
+  width: 200px;
+  height: 60px;
+  font-size: 12px;
+}
+
+.votes-card-two {
+  border-radius: 4px;
+  border: #242424 solid 2px;
+  width: 200px;
+  height: 120px;
+  font-size: 12px;
+}

@@ -21,3 +21,7 @@ export const fetchArticleComments = (article_id) => {
     return data;
   });
 };
+
+export const addVoteToArticle = (article_id, voteData) => {
+  return newsApi.patch(`/articles/${article_id}`, voteData);
+};
