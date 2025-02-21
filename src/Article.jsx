@@ -4,6 +4,7 @@ import { useParams } from "react-router";
 import { fetchArticle, fetchArticleComments } from "./api";
 import CommentsList from "./CommentsList";
 import IncreaseVotesCard from "./IncreaseVotesCard";
+import PostComment from "./PostComment";
 
 function Article() {
   const [chosenArticle, setChosenArticle] = useState({});
@@ -32,6 +33,7 @@ function Article() {
         />
         <p className="text-body">{chosenArticle.body}</p>
       </article>
+
       <CommentsList />
     </div>
   );
